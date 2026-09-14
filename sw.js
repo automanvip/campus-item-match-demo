@@ -1,5 +1,12 @@
-const CACHE_NAME = "lost-found-prototype-public-v4-github";
-const CORE_ASSETS = ["./", "index.html", "styles.css", "app.js", "icon.svg", "manifest.webmanifest"];
+const CACHE_NAME = "lost-found-prototype-public-v5-github";
+const CORE_ASSETS = [
+  "./",
+  "index.html",
+  "styles.css?v=5",
+  "app.js?v=5",
+  "icon.svg?v=5",
+  "manifest.webmanifest?v=5",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS)));
