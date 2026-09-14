@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c3d52" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests"
+    />
+    <meta
+      name="description"
+      content="AI失物小管家——小学生校园问题提案原型，用可解释的特征匹配演示失物招领流程。"
+    />
+    <title>AI失物小管家｜学生提案原型</title>
+    <link rel="canonical" href="https://automanvip.github.io/campus-item-match-demo/" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="paper-noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="AI失物小管家首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 42 42" role="img">
+            <path d="M9 7.5h18a6 6 0 0 1 6 6v21H15a6 6 0 0 1-6-6z" />
+            <path d="M15 13.5h12M15 19.5h9M15 25.5h7" />
+            <circle cx="31.5" cy="28.5" r="6.5" />
+            <path d="m36 33 4 4" />
+          </svg>
+        </span>
+        <span>
+          <b>AI失物小管家</b>
+          <small>校园提案·试用原型</small>
+        </span>
+      </a>
+      <span class="prototype-stamp">原型 V0.1</span>
+    </header>
+
+    <nav class="section-nav" aria-label="页面导航">
+      <a href="#problem">发现</a>
+      <a href="#try" class="nav-primary">试一试</a>
+      <a href="#experiment">AI实验</a>
+      <a href="#plan">行动</a>
+    </nav>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span>01</span> 我准备核实的校园问题</p>
+          <h1>让一句描述，<br /><em>多找到一条线索。</em></h1>
+          <p class="hero-lede">
+            失物和招领信息常常散在纸条、群消息和口头转告里。这个原型先把“丢了什么”和“捡到什么”整理成特征，再给出值得人工核对的候选线索。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#try">现在试用 <span aria-hidden="true">↓</span></a>
+            <button class="button button-ghost" type="button" data-open-dialog="evidence-dialog">
+              查看取证清单
+            </button>
+          </div>
+        </div>
+
+        <div class="case-board reveal reveal-delay-1" aria-label="问题证据卡">
+          <div class="binder-hole hole-1"></div>
+          <div class="binder-hole hole-2"></div>
+          <div class="board-label">待完成的真实取证 <span>0 / 4</span></div>
+          <ul class="evidence-checks">
+            <li><span class="check-box" aria-hidden="true"></span><b>何时</b><small>真实日期与时段</small></li>
+            <li><span class="check-box" aria-hidden="true"></span><b>何地</b><small>校内具体位置</small></li>
+            <li><span class="check-box" aria-hidden="true"></span><b>何事</b><small>发生次数与影响</small></li>
+            <li><span class="check-box" aria-hidden="true"></span><b>何证</b><small>20–30秒视频或录音</small></li>
+          </ul>
+          <p class="board-note">“先观察，再提案。”</p>
+          <span class="tape tape-top" aria-hidden="true"></span>
+          <span class="tape tape-bottom" aria-hidden="true"></span>
+        </div>
+      </section>
+
+      <section class="section problem-section" id="problem">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span>02</span> 真实问题不靠猜</p>
+          <h2>一段视频，四个可核对事实</h2>
+          <p>此处不使用虚构校园数据。拍摄完成后，再把经脱敏的真实记录接入。</p>
+        </div>
+
+        <div class="evidence-layout">
+          <article class="media-card reveal">
+            <div class="media-placeholder">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="7" y="12" width="50" height="38" rx="7" />
+                <path d="m27 24 14 7-14 8z" />
+                <path d="M18 55h28" />
+              </svg>
+              <b>真实观察视频／录音待接入</b>
+              <span>建议 20–30 秒，不拍学生正脸和姓名</span>
+            </div>
+            <footer>
+              <span class="status-dot status-wait"></span>
+              <span>当前状态：等待本人取证</span>
+            </footer>
+          </article>
+
+          <div class="fact-stack reveal reveal-delay-1">
+            <article class="fact-card">
+              <span>FACT 01</span>
+              <h3>发生场景</h3>
+              <p>待填：____年__月__日，在校内________。</p>
+            </article>
+            <article class="fact-card">
+              <span>FACT 02</span>
+              <h3>重复程度</h3>
+              <p>待填：一周观察__次，共看到__件物品。</p>
+            </article>
+            <article class="fact-card accent-card">
+              <span>FACT 03</span>
+              <h3>当前办法的断点</h3>
+              <p>待填：信息在________中容易漏掉或说不清。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section try-section" id="try">
+        <div class="section-heading inverse reveal">
+          <p class="eyebrow"><span>03</span> 亲手试一试</p>
+          <h2>输入一句话，查看候选线索</h2>
+          <p>以下全是演示数据。系统只给候选项，不自动判定物主。</p>
+        </div>
+
+        <div class="demo-shell reveal">
+          <div class="demo-topline">
+            <div>
+              <span class="live-pip"></span>
+              <b>交互演示</b>
+            </div>
+            <span>数据仅留在当前页面</span>
+          </div>
+
+          <form id="match-form" novalidate>
+            <fieldset class="mode-switch">
+              <legend class="sr-only">选择使用场景</legend>
+              <label>
+                <input type="radio" name="mode" value="lost" checked />
+                <span>我丢了东西</span>
+              </label>
+              <label>
+                <input type="radio" name="mode" value="found" />
+                <span>我捡到东西</span>
+              </label>
+            </fieldset>
+
+            <label class="field-label" for="description">
+              <span>用一句话说清楚</span>
+              <small id="character-count">0 / 80</small>
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              maxlength="80"
+              rows="3"
+              placeholder="例如：我早操后在操场附近丢了一个蓝色透明水杯……"
+              aria-describedby="description-help character-count"
+              required
+            ></textarea>
+            <p class="field-help" id="description-help">可以写：物品、颜色、地点、时间和一个特别特征。</p>
+
+            <div class="sample-row" aria-label="一键试用样例">
+              <span>一键试用</span>
+              <button type="button" data-sample="bottle">🧴 蓝色水杯</button>
+              <button type="button" data-sample="pencil">✏️ 红色笔袋</button>
+              <button type="button" data-sample="key">🔑 星星挂件</button>
+            </div>
+
+            <details class="more-fields">
+              <summary>补充结构化线索 <span>可选</span></summary>
+              <div class="field-grid">
+                <label>
+                  <span>物品类别</span>
+                  <select id="category" name="category">
+                    <option value="">让系统从描述中提取</option>
+                    <option value="水杯">水杯</option>
+                    <option value="笔袋">笔袋／文具盒</option>
+                    <option value="钥匙挂件">钥匙／挂件</option>
+                    <option value="校服">校服／衣物</option>
+                    <option value="书本">书本</option>
+                    <option value="其他">其他</option>
+                  </select>
+                </label>
+                <label>
+                  <span>颜色</span>
+                  <select id="color" name="color">
+                    <option value="">未说明</option>
+                    <option value="蓝色">蓝色</option>
+                    <option value="红色">红色</option>
+                    <option value="绿色">绿色</option>
+                    <option value="黄色">黄色</option>
+                    <option value="黑色">黑色</option>
+                    <option value="白色">白色</option>
+                  </select>
+                </label>
+                <label>
+                  <span>大概地点</span>
+                  <select id="location" name="location">
+                    <option value="">未说明</option>
+                    <option value="操场">操场附近</option>
+                    <option value="食堂">食堂附近</option>
+                    <option value="图书馆">图书馆</option>
+                    <option value="教室">教室／走廊</option>
+                    <option value="体育馆">体育馆</option>
+                  </select>
+                </label>
+                <label>
+                  <span>大概时间</span>
+                  <select id="time" name="time">
+                    <option value="">未说明</option>
+                    <option value="早上">早上／早操</option>
+                    <option value="中午">中午</option>
+                    <option value="下午">下午</option>
+                    <option value="放学">放学后</option>
+                  </select>
+                </label>
+              </div>
+            </details>
+
+            <div class="local-photo">
+              <div>
+                <b>可选：本机查看照片</b>
+                <small>只在当前手机预览，不上传，当前原型不自动识图。</small>
+              </div>
+              <label class="photo-button" for="photo-input">
+                <span>选择照片</span>
+                <input id="photo-input" type="file" accept="image/*" />
+              </label>
+              <div id="photo-preview" class="photo-preview" hidden></div>
+            </div>
+
+            <button class="match-button" type="submit">
+              <span class="match-button-icon" aria-hidden="true">⌕</span>
+              <span><b>开始匹配</b><small>大约 0.1 秒，无需登录</small></span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <section id="results" class="results" aria-live="polite" hidden>
+            <div class="result-heading">
+              <div>
+                <p>提取到的线索</p>
+                <div id="extracted-tags" class="extracted-tags"></div>
+              </div>
+              <button id="reset-demo" type="button">重新试用</button>
+            </div>
+            <div class="algorithm-note">
+              <span>当前演示算法</span>
+              <b>关键词 + 特征权重</b>
+              <small>用来验证流程；正式版才计划用 AI 理解自然语言和图片。</small>
+            </div>
+            <div id="result-list" class="result-list"></div>
+            <div class="verify-tip">
+              <span aria-hidden="true">🛡️</span>
+              <p><b>最后一步必须是人工核验。</b>领取时由老师询问未公开的特征，系统不替人做决定。</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="section experiment-section" id="experiment">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span>04</span> AI 不能只写在标题里</p>
+          <h2>我要亲手做一次可复核的小实验</h2>
+          <p>这一区域是实验记录模板，不填造假数据。完成后再替换为提案人本人的输入、结果和修正。</p>
+        </div>
+
+        <div class="experiment-grid">
+          <article class="lab-card reveal">
+            <div class="lab-number">1</div>
+            <div>
+              <h3>准备 5 组样例</h3>
+              <p>每组包含一条“丢失描述”和 3 条“招领记录”。</p>
+            </div>
+            <span class="lab-status">待实测</span>
+          </article>
+          <article class="lab-card reveal reveal-delay-1">
+            <div class="lab-number">2</div>
+            <div>
+              <h3>记录 AI 的选择</h3>
+              <p>保留工具名称、我的提示词、AI 输出截图和用时。</p>
+            </div>
+            <span class="lab-status">待实测</span>
+          </article>
+          <article class="lab-card reveal">
+            <div class="lab-number">3</div>
+            <div>
+              <h3>找到一次错误</h3>
+              <p>说清 AI 为什么判错，以及我怎样改描述或权重。</p>
+            </div>
+            <span class="lab-status">待实测</span>
+          </article>
+          <article class="lab-card reveal reveal-delay-1">
+            <div class="lab-number">4</div>
+            <div>
+              <h3>比较人工与 AI</h3>
+              <p>对比匹配正确数和用时，不只说“AI 更快”。</p>
+            </div>
+            <span class="lab-status">待实测</span>
+          </article>
+        </div>
+
+        <article class="why-ai reveal">
+          <div class="why-ai-title">
+            <span>为什么用 AI？</span>
+            <h3>传统表格是底座，AI 只处理“说法不一样”的难点。</h3>
+          </div>
+          <div class="comparison-line" role="img" aria-label="传统方法与 AI 辅助的分工">
+            <div><span>传统方法</span><b>统一登记、人工核验、物品保管</b></div>
+            <span class="plus" aria-hidden="true">+</span>
+            <div><span>AI 辅助</span><b>理解口语描述、提取图片特征、缩小搜索范围</b></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section plan-section" id="plan">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span>05</span> 从原型到七天小试点</p>
+          <h2>小步试、有人管、随时停</h2>
+          <p>这不是直接上线的校园系统，而是一个需经老师同意的小规模行动方案。</p>
+        </div>
+
+        <ol class="plan-timeline">
+          <li class="reveal">
+            <span>DAY 0</span>
+            <div><b>先申请</b><small>向大队部／老师说明目的、范围和隐私规则。</small></div>
+          </li>
+          <li class="reveal reveal-delay-1">
+            <span>DAY 1</span>
+            <div><b>小范围登记</b><small>只用演示编号，不收姓名、班级和联系方式。</small></div>
+          </li>
+          <li class="reveal">
+            <span>DAY 2–6</span>
+            <div><b>每天 10 分钟复核</b><small>学生整理候选项，老师负责核验与物品归还。</small></div>
+          </li>
+          <li class="reveal reveal-delay-1">
+            <span>DAY 7</span>
+            <div><b>用数据决定是否继续</b><small>看是否减少查找时间、是否有误匹配、老师工作量是否可接受。</small></div>
+          </li>
+        </ol>
+
+        <div class="guardrail-grid">
+          <article class="guardrail reveal"><span>不采集</span><b>姓名、班级、联系方式</b></article>
+          <article class="guardrail reveal reveal-delay-1"><span>不公开</span><b>能证明物主的全部特征</b></article>
+          <article class="guardrail reveal"><span>不自动</span><b>确认物主或完成归还</b></article>
+          <article class="guardrail reveal reveal-delay-1"><span>不硬撑</span><b>误匹配或工作量过高就停</b></article>
+        </div>
+      </section>
+
+      <section class="final-card reveal">
+        <span class="final-kicker">学生提案原型</span>
+        <h2>我不让 AI 替我思考。<br />我用它把问题看得更清楚。</h2>
+        <a href="#try" class="button button-light">再试一次</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <b>AI失物小管家</b>
+        <span>学生校园问题提案·试用原型</span>
+      </div>
+      <p>非学校正式平台·演示数据·不上传信息·最后判断由老师完成</p>
+    </footer>
+
+    <dialog id="evidence-dialog" class="evidence-dialog">
+      <form method="dialog">
+        <button class="dialog-close" value="close" aria-label="关闭">×</button>
+        <p class="eyebrow"><span>取证</span> 拍完再填</p>
+        <h2>30 秒真实观察清单</h2>
+        <ol>
+          <li><b>5 秒：</b>拍清具体位置，不拍同学正脸。</li>
+          <li><b>10 秒：</b>只说亲眼观察到的事实：什么、几件、怎样处理。</li>
+          <li><b>10 秒：</b>演示信息在哪一步断掉，不必演戏或摆拍。</li>
+          <li><b>5 秒：</b>用自己的话说：“我想先做一个小试验。”</li>
+        </ol>
+        <div class="dialog-warning">不显示姓名、班级牌、联系方式和未经同意的人像。</div>
+        <button class="button button-primary dialog-done" value="close">我知道了</button>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

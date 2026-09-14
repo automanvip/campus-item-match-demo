@@ -1,0 +1,17 @@
+{
+  "name": "AI失物小管家·校园提案原型",
+  "short_name": "失物小管家",
+  "description": "一个用于验证校园失物特征匹配流程的学生提案原型。",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8f3e8",
+  "theme_color": "#0c3d52",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
