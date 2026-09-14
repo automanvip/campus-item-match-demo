@@ -1,4 +1,4 @@
-const CACHE_NAME = "lost-found-prototype-public-v1-github";
+const CACHE_NAME = "lost-found-prototype-public-v2-github";
 const CORE_ASSETS = ["./", "index.html", "styles.css", "app.js", "icon.svg", "manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {

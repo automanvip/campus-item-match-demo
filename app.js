@@ -167,6 +167,9 @@ const resetButton = document.querySelector("#reset-demo");
 const toast = document.querySelector("#toast");
 const photoInput = document.querySelector("#photo-input");
 const photoPreview = document.querySelector("#photo-preview");
+const matchButton = document.querySelector("#match-button");
+
+const getMode = () => document.querySelector('input[name="mode"]:checked')?.value || "lost";
 
 const normalizeText = (text) =>
   text
@@ -190,12 +193,11 @@ function inferField(text, dictionary) {
 }
 
 function extractFeatures(description) {
-  const formData = new FormData(form);
   return {
-    category: formData.get("category") || inferField(description, dictionaries.category),
-    color: formData.get("color") || inferField(description, dictionaries.color),
-    location: formData.get("location") || inferField(description, dictionaries.location),
-    time: formData.get("time") || inferField(description, dictionaries.time),
+    category: document.querySelector("#category").value || inferField(description, dictionaries.category),
+    color: document.querySelector("#color").value || inferField(description, dictionaries.color),
+    location: document.querySelector("#location").value || inferField(description, dictionaries.location),
+    time: document.querySelector("#time").value || inferField(description, dictionaries.time),
     terms: distinctiveTerms.filter((term) => normalizeText(description).includes(normalizeText(term))),
   };
 }
@@ -243,7 +245,7 @@ function fieldLabel(field) {
 }
 
 function renderResults(features) {
-  const mode = new FormData(form).get("mode");
+  const mode = getMode();
   const targetItems = mode === "found" ? lostReports : foundItems;
   const ranked = targetItems
     .map((item) => ({ item, ...scoreItem(features, item) }))
@@ -309,7 +311,7 @@ descriptionInput.addEventListener("input", () => {
 document.querySelectorAll("[data-sample]").forEach((button) => {
   button.addEventListener("click", () => {
     const sample = samples[button.dataset.sample];
-    const mode = new FormData(form).get("mode");
+    const mode = getMode();
     const description = mode === "found" ? sample.foundDescription : sample.lostDescription;
     descriptionInput.value = description;
     characterCount.textContent = `${description.length} / 80`;
@@ -330,17 +332,24 @@ document.querySelectorAll('input[name="mode"]').forEach((input) => {
   });
 });
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+function runMatch() {
   const description = descriptionInput.value.trim();
   if (description.length < 4) {
     descriptionInput.classList.add("invalid");
     descriptionInput.focus();
     showToast("请先写一句简单描述");
-    return;
+    return false;
   }
   renderResults(extractFeatures(description));
+  return true;
+}
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  runMatch();
 });
+
+matchButton.addEventListener("click", runMatch);
 
 resetButton.addEventListener("click", () => {
   resultsSection.hidden = true;

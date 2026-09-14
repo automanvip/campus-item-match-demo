@@ -165,7 +165,9 @@ a {
 }
 
 .section-nav a {
-  min-height: 36px;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
   padding: 8px 15px;
   text-decoration: none;
   border-radius: 999px;
@@ -727,7 +729,7 @@ textarea.invalid {
 }
 
 .sample-row button {
-  min-height: 32px;
+  min-height: 44px;
   padding: 5px 10px;
   color: var(--ink);
   background: white;
