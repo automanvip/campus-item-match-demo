@@ -1,4 +1,4 @@
-const CACHE_NAME = "lost-found-prototype-public-v3-github";
+const CACHE_NAME = "lost-found-prototype-public-v4-github";
 const CORE_ASSETS = ["./", "index.html", "styles.css", "app.js", "icon.svg", "manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
@@ -17,11 +17,31 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  const requestUrl = new URL(event.request.url);
+  if (requestUrl.origin !== self.location.origin) return;
+
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put("./", copy));
+          }
+          return response;
+        })
+        .catch(() => caches.match("./")),
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cached) =>
       cached || fetch(event.request).then((response) => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        }
         return response;
       }),
     ),
