@@ -441,5 +441,5 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=6").catch(() => {}));
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=7").catch(() => {}));
 }
