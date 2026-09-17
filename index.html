@@ -16,9 +16,9 @@
     />
     <title>AI失物小管家｜学生提案原型</title>
     <link rel="canonical" href="https://automanvip.github.io/campus-item-match-demo/" />
-    <link rel="manifest" href="manifest.webmanifest?v=8" />
-    <link rel="icon" href="icon.svg?v=8" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=8" />
+    <link rel="manifest" href="manifest.webmanifest?v=9" />
+    <link rel="icon" href="icon.svg?v=9" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=9" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -70,7 +70,7 @@
           <div class="binder-hole hole-2"></div>
           <div class="board-label">真实取证进度 <span>2 / 4</span></div>
           <ul class="evidence-checks">
-            <li><span class="check-box done" aria-hidden="true"></span><b>校内观察与现场照片</b><small>已完成·不拍同学正脸</small></li>
+            <li><span class="check-box done" aria-hidden="true"></span><b>校内观察与现场照片</b><small>已完成·照片已脱敏</small></li>
             <li><span class="check-box done" aria-hidden="true"></span><b>确认学校现有机制</b><small>已了解·流动红领巾可应急借用</small></li>
             <li><span class="check-box doing" aria-hidden="true"></span><b>本人AI识别小实验</b><small>进行中·用5件物品验证</small></li>
             <li><span class="check-box" aria-hidden="true"></span><b>老师同意试点</b><small>待确认·同意后才开始</small></li>
@@ -85,23 +85,24 @@
         <div class="section-heading reveal">
           <p class="eyebrow"><span>02</span> 真实问题不靠猜</p>
           <h2>招领箱塞满了，却很少有人来认领</h2>
-          <p>以下都是本人在校内亲眼看到的真实情况。观察照片涉及校园与他人，只在现场出示，不放在公开页面。</p>
+          <p>以下都是本人在校内亲眼看到的真实情况。照片均为本人实拍，已做脱敏处理，不涉及其他同学正脸。</p>
         </div>
 
         <div class="evidence-layout">
           <article class="media-card reveal">
-            <div class="media-placeholder">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <rect x="7" y="12" width="50" height="38" rx="7" />
-                <path d="m27 24 14 7-14 8z" />
-                <path d="M18 55h28" />
-              </svg>
-              <b>真实观察照片已完成</b>
-              <span>涉及校园与他人，公开页不展示，仅在现场出示</span>
+            <div class="media-photos">
+              <figure>
+                <img src="assets/box-closeup.jpg?v=9" alt="校门口走廊的红色招领箱，箱口塞满无人认领的红领巾" loading="lazy" />
+                <figcaption>本人实拍 · 招领箱</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/observing.jpg?v=9" alt="本人在招领箱旁做观察记录" loading="lazy" />
+                <figcaption>本人实拍 · 现场观察</figcaption>
+              </figure>
             </div>
             <footer>
               <span class="status-dot status-done"></span>
-              <span>当前状态：校内观察与拍照已完成</span>
+              <span>照片均为本人实拍，已脱敏，不涉及其他同学正脸</span>
             </footer>
           </article>
 
@@ -382,7 +383,7 @@
         <p class="eyebrow"><span>取证</span> 进度 2 / 4</p>
         <h2>真实取证与下一步</h2>
         <ol>
-          <li><b>已完成：</b>校内观察与现场照片——校门口走廊招领箱塞满无人认领的红领巾，不拍同学正脸。</li>
+          <li><b>已完成：</b>校内观察与现场照片——校门口走廊招领箱塞满无人认领的红领巾，照片已脱敏，不涉及其他同学正脸。</li>
           <li><b>已了解：</b>学校现有“流动红领巾”应急借用机制——这个做法很好，但借还登记太耗费老师精力。</li>
           <li><b>进行中：</b>本人 AI 识别小实验——用 5 件物品验证“看懂照片、听懂不同说法”。</li>
           <li><b>待确认：</b>老师同意后，在本中队进行 7 天小范围试点。</li>
@@ -393,6 +394,6 @@
     </dialog>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="app.js?v=8" defer></script>
+    <script src="app.js?v=9" defer></script>
   </body>
 </html>

@@ -441,5 +441,15 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=8").catch(() => {}));
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=9").catch(() => {}));
+}
+
+// 评委扫码（?scan=1）：欢迎提示 + 平滑滚动到试玩区
+if (new URLSearchParams(location.search).get("scan") === "1") {
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      showToast("欢迎！点“一键试用”可直接体验 ↓");
+      document.querySelector("#try")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 600);
+  });
 }
