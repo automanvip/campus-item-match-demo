@@ -1,5 +1,23 @@
 const foundItems = [
   {
+    id: "F-040",
+    title: "折叠整齐的红领巾",
+    category: "红领巾",
+    color: "红色",
+    location: "教室",
+    time: "早上",
+    description: "折叠整齐的红领巾，早上在校门口走廊的招领箱旁看到。",
+  },
+  {
+    id: "F-041",
+    title: "有小蓝点的红领巾",
+    category: "红领巾",
+    color: "红色",
+    location: "食堂",
+    time: "中午",
+    description: "洗得有些发白的红领巾，角上有一个小蓝点，中午在食堂门口捡到。",
+  },
+  {
     id: "F-018",
     title: "蓝色透明水杯",
     category: "水杯",
@@ -57,6 +75,15 @@ const foundItems = [
 
 const lostReports = [
   {
+    id: "L-118",
+    title: "红领巾",
+    category: "红领巾",
+    color: "红色",
+    location: "教室",
+    time: "早上",
+    description: "求助同学说：早上到校后发现红领巾不见了，可能落在校门口走廊或教室。",
+  },
+  {
     id: "L-104",
     title: "蓝色透明水杯",
     category: "水杯",
@@ -95,6 +122,14 @@ const lostReports = [
 ];
 
 const samples = {
+  scarf: {
+    lostDescription: "我早上到校后红领巾不见了，可能掉在校门口走廊。",
+    foundDescription: "我早上在校门口走廊捡到一条折叠整齐的红领巾。",
+    category: "红领巾",
+    color: "红色",
+    location: "教室",
+    time: "早上",
+  },
   bottle: {
     lostDescription: "我早操后在操场附近丢了一个蓝色透明水杯，杯盖上有一圈白色。",
     foundDescription: "我早操后在操场东侧捡到一个蓝色透明水杯，杯盖有一圈白色。",
@@ -123,6 +158,7 @@ const samples = {
 
 const dictionaries = {
   category: {
+    "红领巾": ["红领巾"],
     "水杯": ["水杯", "杯子", "保温杯", "塑料杯", "运动杯"],
     "笔袋": ["笔袋", "文具盒", "笔盒", "笔袋"],
     "钥匙挂件": ["钥匙", "挂件", "钥匙圈", "小挂饰"],
@@ -155,6 +191,7 @@ const dictionaries = {
 const distinctiveTerms = [
   "透明", "白色圈", "白色", "条纹", "小船", "硬壳", "拉链",
   "星星", "银色", "圆环", "软塑料", "塑料", "长椅", "窗边",
+  "折叠", "发白", "小蓝点", "蓝点",
 ];
 
 const form = document.querySelector("#match-form");
@@ -404,5 +441,5 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=5").catch(() => {}));
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=6").catch(() => {}));
 }

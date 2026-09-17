@@ -16,9 +16,9 @@
     />
     <title>AI失物小管家｜学生提案原型</title>
     <link rel="canonical" href="https://automanvip.github.io/campus-item-match-demo/" />
-    <link rel="manifest" href="manifest.webmanifest?v=5" />
-    <link rel="icon" href="icon.svg?v=5" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="manifest" href="manifest.webmanifest?v=6" />
+    <link rel="icon" href="icon.svg?v=6" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=6" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -52,10 +52,10 @@
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span>01</span> 我准备核实的校园问题</p>
+          <p class="eyebrow"><span>01</span> 我亲眼看到的校园问题</p>
           <h1>让一句描述，<br /><em>多找到一条线索。</em></h1>
           <p class="hero-lede">
-            失物和招领信息常常散在纸条、群消息和口头转告里。这个原型先把“丢了什么”和“捡到什么”整理成特征，再给出值得人工核对的候选线索。
+            我们看到：校门口的招领箱塞满了无人认领的红领巾——学校其实有流动红领巾可以应急，但箱子只进不出；而衣服、水杯、跳绳这些失物，连一个集中的地方都没有。这个原型先把“丢了什么”和“捡到什么”整理成特征，再给出值得人工核对的候选线索。
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#try">现在试用 <span aria-hidden="true">↓</span></a>
@@ -68,12 +68,12 @@
         <div class="case-board reveal reveal-delay-1" aria-label="问题证据卡">
           <div class="binder-hole hole-1"></div>
           <div class="binder-hole hole-2"></div>
-          <div class="board-label">待完成的真实取证 <span>0 / 4</span></div>
+          <div class="board-label">真实取证进度 <span>2 / 4</span></div>
           <ul class="evidence-checks">
-            <li><span class="check-box" aria-hidden="true"></span><b>何时</b><small>真实日期与时段</small></li>
-            <li><span class="check-box" aria-hidden="true"></span><b>何地</b><small>校内具体位置</small></li>
-            <li><span class="check-box" aria-hidden="true"></span><b>何事</b><small>发生次数与影响</small></li>
-            <li><span class="check-box" aria-hidden="true"></span><b>何证</b><small>20–30秒视频或录音</small></li>
+            <li><span class="check-box done" aria-hidden="true"></span><b>校内观察与现场照片</b><small>已完成·不拍同学正脸</small></li>
+            <li><span class="check-box done" aria-hidden="true"></span><b>确认学校现有机制</b><small>已了解·流动红领巾可应急借用</small></li>
+            <li><span class="check-box doing" aria-hidden="true"></span><b>本人AI识别小实验</b><small>进行中·用5件物品验证</small></li>
+            <li><span class="check-box" aria-hidden="true"></span><b>老师同意试点</b><small>待确认·同意后才开始</small></li>
           </ul>
           <p class="board-note">“先观察，再提案。”</p>
           <span class="tape tape-top" aria-hidden="true"></span>
@@ -84,8 +84,8 @@
       <section class="section problem-section" id="problem">
         <div class="section-heading reveal">
           <p class="eyebrow"><span>02</span> 真实问题不靠猜</p>
-          <h2>一段视频，四个可核对事实</h2>
-          <p>此处不使用虚构校园数据。拍摄完成后，再把经脱敏的真实记录接入。</p>
+          <h2>招领箱塞满了，却很少有人来认领</h2>
+          <p>以下都是本人在校内亲眼看到的真实情况。观察照片涉及校园与他人，只在现场出示，不放在公开页面。</p>
         </div>
 
         <div class="evidence-layout">
@@ -96,12 +96,12 @@
                 <path d="m27 24 14 7-14 8z" />
                 <path d="M18 55h28" />
               </svg>
-              <b>真实观察视频／录音待接入</b>
-              <span>建议 20–30 秒，不拍学生正脸和姓名</span>
+              <b>真实观察照片已完成</b>
+              <span>涉及校园与他人，公开页不展示，仅在现场出示</span>
             </div>
             <footer>
-              <span class="status-dot status-wait"></span>
-              <span>当前状态：等待本人取证</span>
+              <span class="status-dot status-done"></span>
+              <span>当前状态：校内观察与拍照已完成</span>
             </footer>
           </article>
 
@@ -109,17 +109,17 @@
             <article class="fact-card">
               <span>FACT 01</span>
               <h3>发生场景</h3>
-              <p>待填：____年__月__日，在校内________。</p>
+              <p>校门口走廊的红色招领箱，最近多次看到里面塞满无人认领的红领巾。</p>
             </article>
             <article class="fact-card">
               <span>FACT 02</span>
-              <h3>重复程度</h3>
-              <p>待填：一周观察__次，共看到__件物品。</p>
+              <h3>已有机制的断点</h3>
+              <p>学校其实有“流动红领巾”可以应急借用，但借了还了没人登记，箱子只进不出。</p>
             </article>
             <article class="fact-card accent-card">
               <span>FACT 03</span>
-              <h3>当前办法的断点</h3>
-              <p>待填：信息在________中容易漏掉或说不清。</p>
+              <h3>其他失物更难找</h3>
+              <p>衣服、水杯、跳绳这些失物，连一个集中的地方都没有；捡到和丢失的描述也常常对不上。</p>
             </article>
           </div>
         </div>
@@ -170,6 +170,7 @@
 
             <div class="sample-row" aria-label="一键试用样例">
               <span>一键试用</span>
+              <button type="button" data-sample="scarf">🟥 红领巾</button>
               <button type="button" data-sample="bottle">🧴 蓝色水杯</button>
               <button type="button" data-sample="pencil">✏️ 红色笔袋</button>
               <button type="button" data-sample="key">🔑 星星挂件</button>
@@ -182,6 +183,7 @@
                   <span>物品类别</span>
                   <select id="category">
                     <option value="">让系统从描述中提取</option>
+                    <option value="红领巾">红领巾</option>
                     <option value="水杯">水杯</option>
                     <option value="笔袋">笔袋／文具盒</option>
                     <option value="钥匙挂件">钥匙／挂件</option>
@@ -270,18 +272,18 @@
       <section class="section experiment-section" id="experiment">
         <div class="section-heading reveal">
           <p class="eyebrow"><span>04</span> AI 不能只写在标题里</p>
-          <h2>我要亲手做一次可复核的小实验</h2>
-          <p>这一区域是实验记录模板，不填造假数据。完成后再替换为提案人本人的输入、结果和修正。</p>
+          <h2>AI 能做什么、不能做什么</h2>
+          <p>登记和汇总，传统方法也能做；但从照片提取特征、听懂不同说法，人工做起来太慢。我会用 5 件物品的小实验亲手验证，这一区域只记录真实结果，不填造假数据。</p>
         </div>
 
         <div class="experiment-grid">
           <article class="lab-card reveal">
             <div class="lab-number">1</div>
             <div>
-              <h3>准备 5 组样例</h3>
-              <p>每组包含一条“丢失描述”和 3 条“招领记录”。</p>
+              <h3>准备 5 件物品</h3>
+              <p>选 5 件常见失物，各配一条“丢失描述”和几条“招领记录”。</p>
             </div>
-            <span class="lab-status">待实测</span>
+            <span class="lab-status doing">进行中</span>
           </article>
           <article class="lab-card reveal reveal-delay-1">
             <div class="lab-number">2</div>
@@ -312,12 +314,15 @@
         <article class="why-ai reveal">
           <div class="why-ai-title">
             <span>为什么用 AI？</span>
-            <h3>传统表格是底座，AI 只处理“说法不一样”的难点。</h3>
+            <h3>AI 负责“整理和匹配”，人负责“核对和决定”。</h3>
           </div>
-          <div class="comparison-line" role="img" aria-label="传统方法与 AI 辅助的分工">
-            <div><span>传统方法</span><b>统一登记、人工核验、物品保管</b></div>
-            <span class="plus" aria-hidden="true">+</span>
-            <div><span>AI 辅助</span><b>理解口语描述、提取图片特征、缩小搜索范围</b></div>
+          <div>
+            <div class="comparison-line" role="img" aria-label="传统方法与 AI 辅助的分工">
+              <div><span>传统方法</span><b>统一登记、人工核验、物品保管</b></div>
+              <span class="plus" aria-hidden="true">+</span>
+              <div><span>AI 辅助</span><b>看懂照片提取特征、听懂不同说法找候选、汇总高频规律</b></div>
+            </div>
+            <p class="why-ai-cant">AI 不能做：判断谁是真正的主人 · 保管贵重物品 · 代替老师核对和归还。</p>
           </div>
         </article>
       </section>
@@ -332,19 +337,19 @@
         <ol class="plan-timeline">
           <li class="reveal">
             <span>DAY 0</span>
-            <div><b>先申请</b><small>向大队部／老师说明目的、范围和隐私规则。</small></div>
+            <div><b>先申请</b><small>向班主任／大队部说明目的、范围和隐私规则，获得同意再开始。</small></div>
           </li>
           <li class="reveal reveal-delay-1">
             <span>DAY 1</span>
-            <div><b>小范围登记</b><small>只用演示编号，不收姓名、班级和联系方式。</small></div>
+            <div><b>定规则、挂端口</b><small>和信息课老师设计失物卡片，把登记端口挂到学校公众号上试用。</small></div>
           </li>
           <li class="reveal">
             <span>DAY 2–6</span>
-            <div><b>每天 10 分钟复核</b><small>学生整理候选项，老师负责核验与物品归还。</small></div>
+            <div><b>本中队小范围试点</b><small>信息课同学和值日生拍照登记，AI 整理候选，老师核对归还；家长也能在端口上传寻物信息。</small></div>
           </li>
           <li class="reveal reveal-delay-1">
             <span>DAY 7</span>
-            <div><b>用数据决定是否继续</b><small>看是否减少查找时间、是否有误匹配、老师工作量是否可接受。</small></div>
+            <div><b>用四个指标判断</b><small>登记数、归还数、平均用时、同学老师的真实感受——有效再推广，没效果就继续改。</small></div>
           </li>
         </ol>
 
@@ -374,13 +379,13 @@
     <dialog id="evidence-dialog" class="evidence-dialog">
       <form method="dialog">
         <button class="dialog-close" value="close" aria-label="关闭">×</button>
-        <p class="eyebrow"><span>取证</span> 拍完再填</p>
-        <h2>30 秒真实观察清单</h2>
+        <p class="eyebrow"><span>取证</span> 进度 2 / 4</p>
+        <h2>真实取证与下一步</h2>
         <ol>
-          <li><b>5 秒：</b>拍清具体位置，不拍同学正脸。</li>
-          <li><b>10 秒：</b>只说亲眼观察到的事实：什么、几件、怎样处理。</li>
-          <li><b>10 秒：</b>演示信息在哪一步断掉，不必演戏或摆拍。</li>
-          <li><b>5 秒：</b>用自己的话说：“我想先做一个小试验。”</li>
+          <li><b>已完成：</b>校内观察与现场照片——校门口走廊招领箱塞满无人认领的红领巾，不拍同学正脸。</li>
+          <li><b>已了解：</b>学校现有“流动红领巾”应急借用机制——但借了还了没人登记，箱子只进不出。</li>
+          <li><b>进行中：</b>本人 AI 识别小实验——用 5 件物品验证“看懂照片、听懂不同说法”。</li>
+          <li><b>待确认：</b>老师同意后，在本中队进行 7 天小范围试点。</li>
         </ol>
         <div class="dialog-warning">不显示姓名、班级牌、联系方式和未经同意的人像。</div>
         <button class="button button-primary dialog-done" value="close">我知道了</button>
@@ -388,6 +393,6 @@
     </dialog>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="app.js?v=5" defer></script>
+    <script src="app.js?v=6" defer></script>
   </body>
 </html>
